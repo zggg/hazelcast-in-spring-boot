@@ -1,0 +1,28 @@
+group 'com.hazelcast'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    ext {
+        springBootVersion = '1.5.8.RELEASE'
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+dependencies {
+    compile 'com.hazelcast:hazelcast'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.session:spring-session'
+}
